@@ -3,10 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Routing\Route as RoutingRoute;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/bienvenida/{nombre}', function ($nombre) {
-    return "<h1>Bienvenido a mi pagina, hola $nombre, como estas?</h1>";
-});
+// routes/web.php
+Route::get('/{any}', function () {
+    return view('dashboard');
+})->where('any', '.*');
